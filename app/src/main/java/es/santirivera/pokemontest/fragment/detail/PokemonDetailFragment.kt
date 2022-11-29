@@ -41,8 +41,8 @@ class PokemonDetailFragment : PokemonBottomSheetDialogFragment(), Callback<Pokem
     private fun updateContent(item:PokemonDetail) {
         binding.textViewPokemonName.text = item.name.replaceFirstChar { c: Char -> c.uppercaseChar() }
 
-        var heightAsFloat = (item.height / 100).toFloat()
-        var weightAsFloat = (item.weight / 10).toFloat()
+        var heightAsFloat = (item.height.toFloat() / 10)
+        var weightAsFloat = (item.weight.toFloat() / 10)
 
         binding.textViewPokemonHeight.text = String.format("Height: %.2f m", heightAsFloat)
         binding.textViewPokemonWeight.text = String.format("Weight: %.2f kg", weightAsFloat)
